@@ -26,5 +26,6 @@ output_parser = StrOutputParser()
 # OpenAIのAPIにこのプロンプトを送信するためのチェーンを作成
 chain = prompt | llm | output_parser
 
-# チェーンを実行し、結果を表示
-print(chain.invoke({"sentences_before_check": "こんんんちわ、真純です。"}))
+def proofread(text: str):
+    # チェーンを実行し、結果を表示する関数
+    return chain.invoke({"sentences_before_check": text})
